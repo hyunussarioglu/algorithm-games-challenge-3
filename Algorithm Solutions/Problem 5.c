@@ -1,13 +1,13 @@
 /* 
-	Bu program girilen n içim n. fibonacci sayısını ekrana yazdırır.(Sayma sayıları 1'den başladığından n'in 0'dan büyük girildiği varsayılır)
-	|1 1|   matrisinin n-1. kuvveti alınıp |1|  vektörü ile çarpıldığında oluşan vektöün ikinci elemanı n. fibonacci sayısını verir.
+	Bu program girilen n iÃ§im n. fibonacci sayÄ±sÄ±nÄ± ekrana yazdÄ±rÄ±r.(Sayma sayÄ±larÄ± 1'den baÅŸladÄ±ÄŸÄ±ndan n'in 0'dan bÃ¼yÃ¼k girildiÄŸi varsayÄ±lÄ±r)
+	|1 1|   matrisinin n-1. kuvveti alÄ±nÄ±p |1|  vektÃ¶rÃ¼ ile Ã§arpÄ±ldÄ±ÄŸÄ±nda oluÅŸan vektÃ¶Ã¼n ikinci elemano n. fibonacci sayÄ±sÄ±nÄ± verir.
 	|1 0|                                |0|
 */ 
 
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned long long **dot(unsigned long long**, int, int, unsigned long long**, int, int); // Matris çarpımı yapan fonksiyon
+unsigned long long **dot(unsigned long long**, int, int, unsigned long long**, int, int); // Matris Ã§arpÄ±mÄ± yapan fonksiyon
 unsigned long long **exp_n(int); // matrisin n-1. kuvvetini hesaplayan recursive fonksiyon
 
 int main(void)
@@ -16,7 +16,7 @@ int main(void)
 	int i;
 	unsigned long long **fibonacci, **result;
 	
-	// Vektör oluşturulur
+	// VektÃ¶r oluÅŸturulur
 	fibonacci = (unsigned long long**)malloc(2 * sizeof(unsigned long long*));
 	for (i = 0; i < 2; i++)
 	{
@@ -27,7 +27,7 @@ int main(void)
 	printf("Enter n: ");
 	scanf("%i", &n);
 	
-	result = dot(exp_n(n-1), 2, 2, fibonacci, 2, 1); // Sonuç vektörü hesaplanır
+	result = dot(exp_n(n-1), 2, 2, fibonacci, 2, 1); // SonuÃ§ vektÃ¶rÃ¼ hesaplanÄ±r
 	
 	printf("%i. Fibonacci number is %lli", n, result[1][0]);
 	
@@ -67,7 +67,7 @@ unsigned long long **exp_n(int n)
 	identity = (unsigned long long**)malloc(2 * sizeof(unsigned long long*));
 	fibo = (unsigned long long**)malloc(2 * sizeof(unsigned long long*));
 	
-	// Kuvvetini aldığımız matris ve birim matris oluşturulur.
+	// Kuvvetini aldÄ±ÄŸÄ±mÄ±z matris ve birim matris oluÅŸturulur.
 	for (i = 0; i < 2; i++)
 	{
 		*(identity+i) = (unsigned long long*)malloc(2 * sizeof(unsigned long long));
@@ -81,10 +81,10 @@ unsigned long long **exp_n(int n)
 	}
 	
 	/*
-		n>0 olduğu sürece;
-		n tek ise matris^n = matris^(n/2) * matris^(n/2) * matris şeklinde hesaplanır
-		n çift ise matris^n = matris^(n/2) * matris^(n/2) şeklinde hesaplanır
-		n 0 ise birim matris döndürülür.
+		n>0 olduÄŸu sÃ¼rece;
+		n tek ise matris^n = matris^(n/2) * matris^(n/2) * matris ÅŸeklinde hesaplanÄ±r
+		n Ã§ift ise matris^n = matris^(n/2) * matris^(n/2) ÅŸeklinde hesaplanÄ±r
+		n 0 ise birim matris dÃ¶ndÃ¼rÃ¼lÃ¼r.
 	*/
 	if (n > 0)
 	{
