@@ -1,5 +1,5 @@
-// Bu program girilen 1 ve 0'lardan oluşan string ve slot için;
-// 'slot' numaralı slotta bir ürün varsa slot numarasını, yoksa ürün olan en yakın slotun numarasını ekrana yazdırır.
+// Bu program girilen 1 ve 0'lardan oluÅŸan string ve slot iÃ§in;
+// 'slot' numaralÄ± slotta bir Ã¼rÃ¼n varsa slot numarasÄ±nÄ±, yoksa Ã¼rÃ¼n olan en yakÄ±n slotun numarasÄ±nÄ± ekrana yazdÄ±rÄ±r.
 
 #include <stdio.h>
 
@@ -19,21 +19,21 @@ int main(void)
 	}
 	while (string[i++] != '\n');
 	
-	length = i-1; // String uzunluğu
+	length = i-1; // String uzunluÃ°u
 	
 	printf("Enter slot: ");
 	scanf("%i", &slot);
 	
 	printf("\n");
 	
-	// Girilen slot numarasında ürün varsa ekrana yazdırır, yoksa ürün aramaya başlar.
+	// Girilen slot numarasÃ½nda Ã¼rÃ¼n varsa ekrana yazdÄ±rÄ±r, yoksa Ã¼rÃ¼n aramaya baÅŸlar.
 	if (string[slot-1] - 48)
 	{
 		printf("%i", slot);
 	}
 	else
 	{
-		// Stringin dışına çıkmamak için kontroller
+		// Stringin dÄ±ÅŸÄ±na Ã§Ä±kmamak iÃ§in kontroller
 		if (slot-2 < 0)
 		{
 			left = 0;
@@ -55,7 +55,7 @@ int main(void)
 		right_found = left_found = 0;
 		right_limit = left_limit = 1;
 		
-		// Dolu slot bulana kadar veya tüm slotları kontrol edene kadar çalışır.
+		// Dolu slot bulana kadar veya tÃ¼m slotlarÄ± kontrol edene kadar Ã§alÄ±ÅŸÄ±r.
 		while ((left_limit || right_limit) && !(left_found || right_found))
 		{
 			if (left >= 0)
