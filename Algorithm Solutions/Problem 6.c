@@ -1,16 +1,16 @@
 /*
-	Bu program girilen X, N ve A  için;
-	Kullanıcıdan X x N boyutunda bir matris alır.
-	Matrisin rastgele A satırını K matrisine, kalan satırları L matrisine atar.
-	Ekrana K ve L matrisleri çarpılabiliyorsa çarpım sonucunu, çarpılamıyorsa ? yazdırır.
+	Bu program girilen X, N ve A  iÃ§in;
+	KullanÄ±cÄ±dan X x N boyutunda bir matris alÄ±r.
+	Matrisin rastgele A satÄ±rÄ±nÄ± K matrisine, kalan satÄ±rlarÄ± L matrisine atar.
+	Ekrana K ve L matrisleri Ã§arpÄ±ldÄ±ÄŸÄ±nda Ã§arpÄ±m sonucunu, Ã§arpÄ±lamÄ±yorsa ? yazdÄ±rÄ±r.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-long **dot(long**, int, int, long**, int, int); // 2 matris alır ve matris çarpımı yapar.
-void print_matrix(long**, int, int); // Matrisi ekrana yazdırır.
+long **dot(long**, int, int, long**, int, int); // 2 matris alÄ±r ve matris Ã§arpÄ±mÄ± yapar.
+void print_matrix(long**, int, int); // Matrisi ekrana yazdÄ±rÄ±r.
 
 int main(void)
 {
@@ -25,14 +25,14 @@ int main(void)
 	printf("Enter X: ");
 	scanf("%i", &X);
 	
-	matrix = (long**)malloc(X * sizeof(long*)); // Kullanıcının gireceği matris.
+	matrix = (long**)malloc(X * sizeof(long*)); // KullanÄ±cÄ±nÄ±n gireceÄŸi matris.
 	
 	printf("Enter N: ");
 	scanf("%i", &N);
 	
-	vecs = (int*)malloc(N * sizeof(int)); // Hangi satırların seçildiğini gösteren dizi. Tüm elemanları 0'dır. i.satır seçildiğininde i.eleman 1 olur.
+	vecs = (int*)malloc(N * sizeof(int)); // Hangi satÄ±rlarÄ±n seÃ§ildiÄŸini gÃ¶steren dizi. TÃ¼m elemanlarÄ± 0'dÄ±r. i.satÄ±r seÃ§ildiÄŸininde i.eleman 1 olur.
 	
-	// Matris girilir ve seçilen satırlar dizisinin elemanları 0 yapılır.
+	// Matris girilir ve seÃ§ilen satÄ±rlar dizisinin elemanlarÄ± 0 yapÄ±lÄ±r.
 	for (i = 0; i < X; i++)
 	{
 		vecs[i] = 0;
@@ -47,10 +47,10 @@ int main(void)
 	printf("Enter A: ");
 	scanf("%i", &A);
 	
-	K = (long**)malloc(A * sizeof(long*));     // Rastgele seçilen satırların atıldığı matris
-	L = (long**)malloc((X-A) * sizeof(long*)); // Seçilmeyen satırların atıldığı matris
+	K = (long**)malloc(A * sizeof(long*));     // Rastgele seÃ§ilen satÄ±rlardan oluÅŸan matris
+	L = (long**)malloc((X-A) * sizeof(long*)); // SeÃ§ilmeyen satÄ±rlardan oluÅŸan matris
 	
-	// Rastgele seçilen satırlar K matrisine atılır.
+	// Rastgele seÃ§ilen satÄ±rlar K matrisine atÄ±lÄ±r.
 	for (i = 0; i < A; i++)
 	{
 		do
@@ -63,7 +63,7 @@ int main(void)
 		vecs[row]++;
 	}
 	
-	// Seçilmeyen satırlar(dizide 0 olanlar) L matrisine atılır.
+	// SeÃ§ilmeyen satÄ±rlar(vecs dizisinde 0 olanlar) L matrisine atÄ±lÄ±r.
 	L_cnt = 0;
 	for (i = 0; i < X; i++)
 	{
@@ -73,17 +73,17 @@ int main(void)
 		}
 	}
 	
-	// A veya X-A sütun sayısına eşit ise matrisler çarpılır ve sonuç yazdırılır. Değilse ? yazdırılır.
+	// A veya X-A sÃ¼tun sayÄ±sÄ±na eÅŸit ise matrisler Ã§arpÄ±lÄ±r ve sonuÃ§ yazdÄ±rÄ±lÄ±r. DeÄŸilse ? yazdÄ±rÄ±lÄ±r.
 	if ((X - A) == N)
 	{
-		mul = dot(K, A, N, L, (X-A), N); // X-A sütun sayısına eşit olduğundan KxL işlemi yapılır.
+		mul = dot(K, A, N, L, (X-A), N); // X-A sÃ¼tun sayÄ±sÄ±na eÅŸit olduÄŸundan KxL iÅŸlemi yapÄ±lÄ±r.
 		print_matrix(mul, A, N);
 	}
 	else
 	{
 		if (A == N)
 		{
-			mul = dot(L, (X-A), N, K, A, N); // A sütun sayısına eşit olduğu için LxK işlemi yapılır.
+			mul = dot(L, (X-A), N, K, A, N); // A sÃ¼tun sayÄ±sÄ±na eÅŸit olduÃ°u iÃ§in LxK iÅŸlemi yapÄ±lÄ±r.
 			print_matrix(mul, (X-A), N);
 		}
 		else
