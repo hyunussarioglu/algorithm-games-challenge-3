@@ -1,7 +1,7 @@
 /* 
-	Bu program girilen n içim n. fibonacci sayısını ekrana yazdırır.(Sayma sayıları 1'den başladığından n'in 0'dan büyük girildiği varsayılır)
+	Bu program girilen n içim n. fibonacci sayısını ekrana yazdırır. (Sayma sayıları 1'den başladığından n'in 0'dan büyük girildiği varsayılır)
 	|1 1|   matrisinin n-1. kuvveti alınıp |1|  vektörü ile çarpıldığında oluşan vektöün ikinci elemano n. fibonacci sayısını verir.
-	|1 0|                                |0|
+	|1 0|                                  |0|
 */ 
 
 #include <stdio.h>
