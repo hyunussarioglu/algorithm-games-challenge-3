@@ -81,10 +81,10 @@ unsigned long long **exp_n(int n)
 	}
 	
 	/*
-		n>0 olduğu sürece;
-		n tek ise matris^n = matris^(n/2) * matris^(n/2) * matris şeklinde hesaplanır
-		n çift ise matris^n = matris^(n/2) * matris^(n/2) şeklinde hesaplanır
-		n 0 ise birim matris döndürülür.
+	n>0 olduğu sürece;
+	n tek ise matris^n = matris^(n/2) * matris^(n/2) * matris şeklinde hesaplanır
+	n çift ise matris^n = matris^(n/2) * matris^(n/2) şeklinde hesaplanır
+	n 0 ise birim matris döndürülür.
 	*/
 	if (n > 0)
 	{
