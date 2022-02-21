@@ -19,14 +19,14 @@ int main(void)
 	}
 	while (string[i++] != '\n');
 	
-	length = i-1; // String uzunluðu
+	length = i-1; // String uzunluğu
 	
 	printf("Enter slot: ");
 	scanf("%i", &slot);
 	
 	printf("\n");
 	
-	// Girilen slot numarasýnda ürün varsa ekrana yazdırır, yoksa ürün aramaya başlar.
+	// Girilen slot numarasında ürün varsa ekrana yazdırır, yoksa ürün aramaya başlar.
 	if (string[slot-1] - 48)
 	{
 		printf("%i", slot);
